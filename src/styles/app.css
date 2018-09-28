@@ -1,0 +1,39 @@
+.app{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.patient-list{
+  width: 25rem;
+}
+
+.patient{
+  margin-bottom: 0.5rem;
+}
+
+.card{
+  box-shadow: 0.1rem 0.1rem #dfdcdc;
+  background: no-repeat url(//s.ytimg.com/yt/imgbin/www-refreshbg-vflC3wnbM.png) 0 0;
+  background-color: #ebebeb;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+}
+
+.card .index{
+  padding-left: 5%;
+}
+
+.card .details{
+  padding-left: 15%;
+}
+
+ul{
+  display: flex;
+  flex-direction: row;
+}
+
+ul li{
+  margin: 1rem 1rem;
+}
