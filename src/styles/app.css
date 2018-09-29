@@ -13,7 +13,7 @@
 }
 
 .card{
-  box-shadow: 0.1rem 0.1rem #dfdcdc;
+  box-shadow: 0.08rem 0.08rem #d6d1d1;
   background: no-repeat url(//s.ytimg.com/yt/imgbin/www-refreshbg-vflC3wnbM.png) 0 0;
   background-color: #ebebeb;
   display: flex;
@@ -31,9 +31,44 @@
 
 ul{
   display: flex;
+  padding: 1rem 0rem 1rem 0rem;
+  width: 25rem;
   flex-direction: row;
+  justify-content: center;
+}
+
+ul li>a{
+  padding: 1rem 1rem;
+  background: no-repeat url(//s.ytimg.com/yt/imgbin/www-refreshbg-vflC3wnbM.png) 0 0;
+  box-shadow: 0.1rem 0.1rem #a5a3a3;
+  background-color: #ebebeb;
+  user-select: none;
+  border-radius: 100rem;
 }
 
 ul li{
-  margin: 1rem 1rem;
+  border-radius: 100rem;
+
+  margin: 0rem 0rem;
+  padding: 0rem 0rem;
+  cursor: pointer;
+  border: none;
+  
+  
+  list-style: none;
+}
+
+ul li:hover > a{
+  transition: all 300ms;
+  box-shadow: 0rem 0rem #dfdcdc;
+}
+
+ul li.selected > a{
+  box-shadow: inset 0.1rem 0.1rem #b9afaf;
+
+  background: none;
+  background-color: #e0d5d5;
+  border: 1px solid #e0d5d5;
+  text-decoration: none;
+  user-select: none;
 }
