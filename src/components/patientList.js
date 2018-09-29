@@ -1,10 +1,15 @@
+/**
+ * PatientList 
+ *  renders Individual Patient Components
+ */
+
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Patient from './patient';
 
 class PatientList extends Component {
   getPatientList() {
-    return this.props.patients.map(patient => {
+    return this.props.patientsList.map(patient => {
       return <Patient key={patient.id} patient={{ ...patient }} />
     })
   }
@@ -20,7 +25,7 @@ class PatientList extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    patients: state.patients.data
+    patientsList: state.patients.data
   }
 }
 

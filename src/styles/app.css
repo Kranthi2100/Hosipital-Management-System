@@ -4,6 +4,27 @@
   align-items: center;
 }
 
+/*
+header
+*/
+
+header{
+  background: no-repeat url(//s.ytimg.com/yt/imgbin/www-refreshbg-vflC3wnbM.png) 0 0;
+  background-color: #ebebeb;
+  font-weight: bold;
+  display: flex;
+  box-shadow: 0.08rem 0.08rem #c9c4c4; 
+}
+
+header img{
+  padding: 1rem 1rem;
+}
+
+
+/*
+patient container
+*/
+
 .patient-list{
   width: 25rem;
 }
@@ -17,16 +38,53 @@
   background: no-repeat url(//s.ytimg.com/yt/imgbin/www-refreshbg-vflC3wnbM.png) 0 0;
   background-color: #ebebeb;
   display: flex;
+  justify-content: space-around;
   flex-direction: row;
-  justify-content: start;
 }
 
 .card .index{
+  background-color: #e7d3d3;
+  flex: 1;
   padding-left: 5%;
+  padding-right: 1rem;
+  box-shadow: inset 0.1rem 0.1rem 1rem 0rem #c4b0b0;
+  clip-path: polygon(57% 0, 100% 0, 72% 52%, 49% 100%, 0 100%, 0 0);
 }
 
 .card .details{
-  padding-left: 15%;
+  flex: 7;
+  padding-left: 3%;
+}
+
+.card .actions {
+  flex: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 5rem;
+}
+
+.card .actions img:hover{
+  transform: scale(1.1);
+  transition: all 300ms;
+}
+
+.card .actions img:active{
+  transform: scale(0.8);
+  transition: all 300ms;
+}
+
+/*
+pagination
+*/
+
+ul li.previous{
+  align-items: flex-start;
+  margin-right: 2rem;
+}
+
+ul li.next{
+  margin-left: 2rem;
 }
 
 ul{
@@ -48,7 +106,7 @@ ul li>a{
 
 ul li{
   border-radius: 100rem;
-
+  
   margin: 0rem 0rem;
   padding: 0rem 0rem;
   cursor: pointer;
@@ -64,9 +122,9 @@ ul li:hover > a{
 }
 
 ul li.selected > a{
-  box-shadow: inset 0.1rem 0.1rem #b9afaf;
+  transition: all 300ms;
+  box-shadow: inset 0.1rem 0.1rem 0.2rem #b9afaf;
 
-  background: none;
   background-color: #e0d5d5;
   border: 1px solid #e0d5d5;
   text-decoration: none;
