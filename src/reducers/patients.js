@@ -11,7 +11,9 @@
 import {
   SET_PATIENTS,
   ADD_NEXT_PATIENTS,
-  REMOVE_PATIENT
+  REMOVE_PATIENT,
+  EDIT_PATIENT,
+  SAVE_PATIENT
 } from '../actions/types';
 
 const defaultPatientsState = {
@@ -25,6 +27,7 @@ let nextState = {};
 
 export default function (prevState = defaultPatientsState, action) {
   switch (action.type) {
+    // fetch next few patient according to pagination limit
     case SET_PATIENTS:
       nextState = {
         data: action.data,
@@ -33,13 +36,34 @@ export default function (prevState = defaultPatientsState, action) {
         selectedPage: Math.min(action.selectedPage, action.totalPageCount)
       };
       return nextState;
-    case ADD_NEXT_PATIENTS:
+    // fetch next patient
+    case ADD_NEXT_PATIENTS: 
       let data = prevState.data.concat(action.data);
       nextState = {
         ...prevState,
         data
       };
       return nextState;
+    // edit patient details
+    case EDIT_PATIENT:
+      nextState = prevState;
+      nextState.data = prevState.data.map(patient => {
+        if(patient.id === action.id){
+          patient.phone = action.phone;
+          patient.name = action.name;
+          return patient;
+        }
+        return patient;
+      })
+      return nextState;
+    // add new patient to the database
+    case SAVE_PATIENT:
+      if( prevState.data.length < 10){
+        prevState.data = prevState.data.push(action.patient)
+        console.log(action.patient);
+      }
+      return prevState;
+    // remove patient from the database
     case REMOVE_PATIENT:
       //update meta
       const count = prevState.count - 1;

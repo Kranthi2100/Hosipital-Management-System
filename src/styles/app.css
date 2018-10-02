@@ -4,6 +4,9 @@
   align-items: center;
 }
 
+*{
+  outline: none !important;
+}
 /*
 header
 */
@@ -24,7 +27,6 @@ header img{
 /*
 patient container
 */
-
 .patient-list{
   width: 25rem;
 }
@@ -33,7 +35,17 @@ patient container
   margin-bottom: 0.5rem;
 }
 
+/* .card:hover{
+  transition: all 330ms;
+  margin: 2.4rem 2.6rem;
+  transform: scale(1.6);
+  box-shadow: 0.2rem 0.2rem #d6d1d1;
+} */
+
 .card{
+  border-radius: 2%;
+  transition: all 100ms;
+  transform: scale(1);
   box-shadow: 0.08rem 0.08rem #d6d1d1;
   background: no-repeat url(//s.ytimg.com/yt/imgbin/www-refreshbg-vflC3wnbM.png) 0 0;
   background-color: #ebebeb;
@@ -43,12 +55,14 @@ patient container
 }
 
 .card .index{
-  background-color: #e7d3d3;
+  border-radius: 2%;
+  background-color: #eedede;
   flex: 1;
   padding-left: 5%;
   padding-right: 1rem;
   box-shadow: inset 0.1rem 0.1rem 1rem 0rem #c4b0b0;
   clip-path: polygon(57% 0, 100% 0, 72% 52%, 49% 100%, 0 100%, 0 0);
+  font-family: 'Special Elite', cursive;
 }
 
 .card .details{
@@ -88,6 +102,8 @@ ul li.next{
 }
 
 ul{
+  font-family: 'Special Elite', cursive;
+  font-weight: bold;
   display: flex;
   padding: 1rem 0rem 1rem 0rem;
   width: 25rem;
@@ -96,16 +112,18 @@ ul{
 }
 
 ul li>a{
-  padding: 1rem 1rem;
+  padding: 0.8rem 1rem;
+  margin-right: 0.1rem;
   background: no-repeat url(//s.ytimg.com/yt/imgbin/www-refreshbg-vflC3wnbM.png) 0 0;
   box-shadow: 0.1rem 0.1rem #a5a3a3;
   background-color: #ebebeb;
   user-select: none;
-  border-radius: 100rem;
+  text-decoration: none;
+  border-radius: 50%;
 }
 
 ul li{
-  border-radius: 100rem;
+  /* border-radius: 100%; */
   
   margin: 0rem 0rem;
   padding: 0rem 0rem;
@@ -129,4 +147,147 @@ ul li.selected > a{
   border: 1px solid #e0d5d5;
   text-decoration: none;
   user-select: none;
+}
+
+/**
+ * modals
+ */
+.ReactModal__Overlay{
+  padding: 1rem 1rem;
+  position:fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(100, 100, 100, 0.5); 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ReactModal__Content {
+  border-radius: 0.8rem;
+  opacity: 0;
+  width: 35rem;
+  height: 24rem;
+  background-color: #ebebeb;
+  box-shadow: 0.1rem 0.1rem #cac5c5;
+}
+
+.ReactModal__Content--after-open {
+  opacity: 1;
+  transition: opacity 500ms;
+}
+
+.ReactModal__Content--before-close {
+  opacity: 0;
+}
+
+.ReactModal__Overlay--after-open {
+  opacity: 1;
+  transition: opacity 500ms;
+}
+
+.ReactModal__Overlay--before-close {
+  opacity: 0;
+}
+
+.edit__patient__title{
+  border-top-left-radius: 0.8rem;
+  border-top-right-radius: 0.8rem;
+  font-family: 'Fruktur', cursive;
+  font-size: 25px;
+  padding: 1.5rem 1.5rem;
+  padding-left: 40%;
+  background-color: #e6d1d1;
+}
+
+.edit__patient_index{
+  padding-left: 45%;
+}
+.edit__patient_index__label{
+  font-family: 'Fruktur', cursive;
+  padding: 1rem 1rem;  
+}
+
+.edit__patient__block__label{
+  font-family: 'Black Ops One', cursive;
+  /* font-family: 'Fruktur', cursive; */
+  margin-bottom: 0.5rem;
+}
+
+.edit__patient__block__input > input{
+  padding: 0.8rem 1rem;
+  border: none;
+  background-color: #e4cece;
+  width: 90%;
+  border-radius: 0.5rem;
+}
+
+.edit__patient__block{
+  padding: 1rem 1rem;
+  border-bottom: 1px solid #dfcdcd;
+}
+
+.edit__patient__block--top-line{
+  border-top: 1px solid #dfcdcd;
+}
+
+.edit__patient__button--save > button{
+  width: 100%;
+  height: 3.1rem;
+  border: none;
+  background-color: #129cec;
+  font-family: 'Fruktur', cursive;
+  color: black;
+  font-size: 20px;
+  border-bottom-left-radius: 0.8rem;
+  border-bottom-right-radius: 0.8rem;
+  box-shadow: 0.1rem 0.1rem #1c95c5;
+}
+
+.edit__patient__button--save > button:active{
+  transform: scale(1.1);
+  transition: all 300ms;
+}
+
+.edit__patient_button--close{
+  padding-top: 1rem;
+  padding-left: 45%;
+}
+
+.edit__patient_button--close > button{
+  box-shadow: 0.1rem 0.1rem #d4c7c7;
+  border-radius: 50%;
+  padding: 0.6rem 0.9rem;
+  border: none;
+  background-color: white;
+  font-size: 20px;
+}
+
+.edit__patient_button--close > button:active {
+  transition: transform 300ms;
+  transform: scale(0.8);
+}
+
+.add__patient > button{
+  color: white;
+  border: none;
+  background-color: #e04040;
+  box-shadow: 0.11rem 0.11rem #c72d2d;
+  border-radius: 50%;
+  padding: 1rem 1.1rem;
+  bottom: 2rem;
+  right: 2rem;
+  position: fixed;
+}
+
+.add__patient > button:hover{
+  transition: box-shadow 300ms;
+  box-shadow: 0.05rem 0.05rem #cf3838;
+}
+
+.add__patient > button:active{
+  transition: transform 300ms;
+  transform: scale(0.8)
 }

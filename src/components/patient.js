@@ -13,8 +13,18 @@ class Patient extends Component {
   constructor(props) {
     super(props);
     this.handleDelete = this.handleDelete.bind(this);
+    this.handleEdit = this.handleEdit.bind(this);
   }
 
+  handleEdit(){
+    this.props.handleEdit({ //invoke parent class function
+      id: this.props.patient.id,
+      name: this.props.patient.name,
+      phone: this.props.patient.phone
+    });
+    this.props.handleOpenModal(); //invoke parent class function
+  }
+  
   handleDelete() {
     this.props.deletePatientFromServer(this.props.patient.id);
   }
@@ -30,7 +40,7 @@ class Patient extends Component {
           <p>{this.props.patient.phone}</p>
         </div>
         <div className="actions">
-          <div className="edit-log">
+          <div className="edit-log" onClick={this.handleEdit}>
             <img src='/static/images/edit.png' alt='edit' width='25px' heighit='25px' />
           </div>
           <div className="delete-log" onClick={this.handleDelete}>

@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import PatientContainer from './components/patientContainer';
-import Header from './components/header';
+import AppContainer from './container/appContainer';
 import { Provider } from 'react-redux';
 import './styles/index.css';
 
@@ -11,10 +10,7 @@ const store = configStore();
 
 const App = () => (
   <Provider store={store} >
-    <div>
-      <Header />
-      <PatientContainer />
-    </div>
+      <AppContainer />
   </Provider>
 )
 
