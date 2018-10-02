@@ -1,16 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import AppContainer from './container/appContainer';
-import { Provider } from 'react-redux';
+import {Provider} from 'react-redux';
 import './styles/index.css';
+import AppRoute from './routers/appRoute';
 
 import configStore from './store/configStore';
 
 const store = configStore();
 
 const App = () => (
-  <Provider store={store} >
-      <AppContainer />
+  <Provider store={store}>
+    <AppRoute />
   </Provider>
 )
 

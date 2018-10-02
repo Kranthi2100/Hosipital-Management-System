@@ -58,11 +58,14 @@ export default function (prevState = defaultPatientsState, action) {
       return nextState;
     // add new patient to the database
     case SAVE_PATIENT:
+      nextState = prevState;
       if( prevState.data.length < 10){
-        prevState.data = prevState.data.push(action.patient)
+        nextState.data = prevState.data.push(action.patient)
         console.log(action.patient);
       }
-      return prevState;
+      nextState.count = prevState.count + 1;
+      nextState.totalPageCount = Math.ceil(prevState.count / 10);
+      return nextState;
     // remove patient from the database
     case REMOVE_PATIENT:
       //update meta

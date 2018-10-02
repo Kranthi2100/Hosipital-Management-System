@@ -291,3 +291,51 @@ ul li.selected > a{
   transition: transform 300ms;
   transform: scale(0.8)
 }
+
+/** logout */
+
+.logout{
+  position: absolute;
+  right: 2%;
+  top: 0.9rem;
+  border: none;
+  padding: 1rem 1rem;
+}
+
+/** login */
+
+.login{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding-top: 10%;
+}
+
+.login__content{
+  background-color: #dfc5c5;
+  box-shadow: 0.1rem 0.1rem #ceafaf;
+  padding: 2rem 2rem;
+  height: 17rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.login__content > div{
+  margin: 0.5rem 0.2rem;
+}
+
+.login__content input{
+  border: none;
+  height: 2rem;
+  width: 17.8rem;
+  margin-top: 0.5rem;
+  padding: 0.1rem 0.5rem;
+}
+
+.login__button > button{
+  border: none;
+  padding: 0.5rem 8.4rem;
+}

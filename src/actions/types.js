@@ -7,3 +7,6 @@ export const ADD_NEXT_PATIENTS = 'ADD-NEXT-PATIENTS';
 export const REMOVE_PATIENT = 'REMOVE-PATIENTS';
 export const EDIT_PATIENT = 'EDIT-PATIENT';
 export const SAVE_PATIENT = 'SAVE-PATIENT';
+
+export const LOGIN = 'LOGIN';
+export const LOGOUT = 'LOGOUT';
