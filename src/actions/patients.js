@@ -85,32 +85,25 @@ export const startEditPatientOnServer = (patient) => {
 export const startAddPatientToServer = (patient) => {
   return (dispatch) => {
     const headers =  { "Content-Type": "application/json"};
-    // due to some limitaion on auto index increment in json-server
-    // get index from server
-    fetch(`http://localhost:3001/meta`).then(res => res.json)
-      .then(({ index }) => {
-        fetch(`http://localhost:3001/patients/`, {
-          method: 'post',
-          body: JSON.stringify({name: patient.name, phone: patient.phone}),
-          headers
-        })
-          .then(res => {
-            if (res.ok) {
-              return res.json()
-            }
-          })
-          .then(_patient => {
-            if(_patient.id){
-              dispatch({
-                type: SAVE_PATIENT,
-                patient: _patient
-              })
-            }
-          })
-          .catch(console.error)
-
-
+    fetch(`http://localhost:3001/patients/`, {
+      method: 'post',
+      body: JSON.stringify({name: patient.name, phone: patient.phone}),
+      headers
+    })
+      .then(res => {
+        if (res.ok) {
+          return res.json()
+        }
       })
+      .then(_patient => {
+        if(_patient.id){
+          dispatch({
+            type: SAVE_PATIENT,
+            patient: _patient
+          })
+        }
+      })
+      .catch(console.error)
   }
 }
 

@@ -85,7 +85,7 @@ class PatientContainer extends Component {
     /**
      * genarate patient list
      */
-    return this.props.patientsList.map(patient => {
+    return this.props.patients.data.map(patient => {
       return (
         <Patient
           key={patient.id}
@@ -132,7 +132,7 @@ class PatientContainer extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    patientsList: state.patients.data
+    patients: state.patients
   }
 }
 

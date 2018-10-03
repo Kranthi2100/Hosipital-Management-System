@@ -60,8 +60,7 @@ export default function (prevState = defaultPatientsState, action) {
     case SAVE_PATIENT:
       nextState = prevState;
       if( prevState.data.length < 10){
-        nextState.data = prevState.data.push(action.patient)
-        console.log(action.patient);
+        nextState.data.push(action.patient)
       }
       nextState.count = prevState.count + 1;
       nextState.totalPageCount = Math.ceil(prevState.count / 10);

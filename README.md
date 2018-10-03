@@ -1,4 +1,6 @@
-##SETUP Instructions
+## SETUP Instructions
+
+`run yarn install`
 
 #### 1) run json-server on port 3001 
     run "yarn serve_db" to start json-server on port 3001
