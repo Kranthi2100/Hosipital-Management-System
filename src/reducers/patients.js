@@ -46,7 +46,9 @@ export default function (prevState = defaultPatientsState, action) {
       return nextState;
     // edit patient details
     case EDIT_PATIENT:
-      nextState = prevState;
+      nextState = {
+        ...prevState
+      };
       nextState.data = prevState.data.map(patient => {
         if(patient.id === action.id){
           patient.phone = action.phone;
@@ -58,12 +60,14 @@ export default function (prevState = defaultPatientsState, action) {
       return nextState;
     // add new patient to the database
     case SAVE_PATIENT:
-      nextState = prevState;
+      nextState = {
+        ...prevState,
+        count: prevState.count + 1,
+        totalPageCount: Math.ceil((prevState.count + 1) / 10)
+      };
       if( prevState.data.length < 10){
         nextState.data.push(action.patient)
       }
-      nextState.count = prevState.count + 1;
-      nextState.totalPageCount = Math.ceil(prevState.count / 10);
       return nextState;
     // remove patient from the database
     case REMOVE_PATIENT:
