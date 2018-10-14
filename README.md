@@ -1,3 +1,10 @@
+## https://hosipital-ef5e8.firebaseapp.com/
+    
+#### Login
+    username: admin
+    password: password
+
+
 ## SETUP Instructions
 
 `run yarn install`
@@ -9,7 +16,3 @@
     or
     yarn build 
     yarn serve
-    
-#### login
-    username: admin
-    password: password
